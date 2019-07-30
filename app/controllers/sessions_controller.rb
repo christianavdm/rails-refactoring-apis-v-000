@@ -10,6 +10,9 @@ class SessionsController < ApplicationController
     user_json = JSON.parse(user_response.body)
     session[:username] = user_json["login"]
 
+  #  github_repo = GithubRepo.new
+  #  session[:username] = github_repo.authenticate!(ENV["GITHUB_CLIENT"], ENV["GITHUB_SECRET"], params[:code])
+ 
     redirect_to '/'
   end
 end
